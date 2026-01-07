@@ -1,3 +1,6 @@
+/* ==========================
+   RESET E VARIÁVEIS GLOBAIS
+========================== */
 * {
   margin: 0;
   padding: 0;
@@ -5,57 +8,74 @@
 }
 
 :root {
-  --cor-primaria: #6c63ff;
-  --cor-secundaria: #1e1e2f;
-  --cor-texto: #333;
+  --color-primary: #6c63ff;
+  --color-secondary: #1e1e2f;
+  --color-text: #333;
+  --color-light: #f5f5f5;
+  --font-base: Arial, Helvetica, sans-serif;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--cor-texto);
+  font-family: var(--font-base);
+  color: var(--color-text);
   line-height: 1.6;
 }
 
-/* HEADER */
+/* ==========================
+   UTILITÁRIOS
+========================== */
+.u-text-center {
+  text-align: center;
+}
+
+.u-container {
+  padding: 4rem 10vw;
+}
+
+/* ==========================
+   HEADER (block: header)
+========================== */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5vw;
-  background: var(--cor-secundaria);
+  background: var(--color-secondary);
 }
 
-.logo {
+.header__logo {
   color: #fff;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.menu {
+.header__menu {
   list-style: none;
   display: flex;
   gap: 2rem;
 }
 
-.menu a {
+.header__link {
   color: #fff;
   text-decoration: none;
   font-size: 1rem;
 }
 
-/* HOME */
-.home {
+/* ==========================
+   HERO / HOME (block: hero)
+========================== */
+.hero {
   position: relative;
   height: 80vh;
 }
 
-.home img {
+.hero__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.home-texto {
+.hero__content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -64,107 +84,119 @@ body {
   text-align: center;
 }
 
-.home-texto h1 {
+.hero__title {
   font-size: 2.5rem;
 }
 
-.home-texto p {
+.hero__text {
   font-size: 1.2rem;
 }
 
-/* SEÇÕES */
-section {
+/* ==========================
+   SEÇÕES (block: section)
+========================== */
+.section {
   padding: 4rem 10vw;
 }
 
-h2 {
+.section__title {
   text-align: center;
   margin-bottom: 2rem;
-  color: var(--cor-secundaria);
+  color: var(--color-secondary);
 }
 
-/* SERVIÇOS */
-.grid-servicos {
+/* ==========================
+   SERVIÇOS (block: services)
+========================== */
+.services__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
 }
 
-.card {
+.services__card {
   padding: 2rem;
-  background: #f5f5f5;
+  background: var(--color-light);
   border-radius: 8px;
   text-align: center;
 }
 
-/* DEPOIMENTOS */
-.depoimentos-container {
+/* ==========================
+   DEPOIMENTOS (block: testimonials)
+========================== */
+.testimonials__list {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.depoimento {
+.testimonials__item {
   max-width: 250px;
   text-align: center;
 }
 
-.depoimento img {
+.testimonials__avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   margin-bottom: 1rem;
 }
 
-/* CONTATO */
-.contato-container {
+/* ==========================
+   CONTATO (block: contact)
+========================== */
+.contact__wrapper {
   display: flex;
   gap: 3rem;
   flex-wrap: wrap;
 }
 
-.formulario {
+.contact__form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   flex: 1;
 }
 
-.formulario input,
-.formulario textarea {
+.contact__input,
+.contact__textarea {
   padding: 0.8rem;
   font-size: 1rem;
 }
 
-.formulario button {
+.contact__button {
   padding: 0.8rem;
-  background: var(--cor-primaria);
+  background: var(--color-primary);
   color: #fff;
   border: none;
   cursor: pointer;
 }
 
-/* FOOTER */
+/* ==========================
+   FOOTER (block: footer)
+========================== */
 .footer {
   text-align: center;
   padding: 1rem;
-  background: var(--cor-secundaria);
+  background: var(--color-secondary);
   color: #fff;
 }
 
-/* RESPONSIVO */
+/* ==========================
+   RESPONSIVIDADE
+========================== */
 @media (max-width: 768px) {
-  .menu {
+  .header__menu {
     flex-direction: column;
     gap: 1rem;
   }
 
-  .home-texto h1 {
+  .hero__title {
     font-size: 1.8rem;
   }
 
-  .contato-container {
+  .contact__wrapper {
     flex-direction: column;
   }
 }
