@@ -1,0 +1,20 @@
+@use 'variaveis' as *;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-base;
+  color: $color-text;
+  line-height: 1.6;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-container {
+  padding: $spacing-lg $container-padding;
+}

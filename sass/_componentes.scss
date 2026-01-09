@@ -1,0 +1,63 @@
+@use 'variaveis' as *;
+@use 'mixins' as *;
+
+.services {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: $spacing-md;
+  }
+
+  &__card {
+    padding: $spacing-md;
+    background: $color-light;
+    border-radius: $radius-default;
+    text-align: center;
+  }
+}
+
+.testimonials {
+  &__list {
+    display: flex;
+    gap: $spacing-md;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__item {
+    max-width: 250px;
+    text-align: center;
+  }
+
+  &__avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: $spacing-sm;
+  }
+}
+
+.contact {
+  &__wrapper {
+    display: flex;
+    gap: $spacing-lg;
+    flex-wrap: wrap;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    flex: 1;
+  }
+
+  &__input,
+  &__textarea {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  &__button {
+    @include button-base($color-primary);
+  }
+}
